@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Text to Speech Converter</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">Text to Speech Converter</h1>
+      <textarea name="msg" id="msgBox"></textarea>
+      <button id="btn">Convert Into Speech</button>
+    </div>
+
+    <script>
+      var userInput = document.querySelector("#msgBox");
+      var convertBtn = document.querySelector("#btn");
+
+      convertBtn.addEventListener("click", () => {
+        var utterance = new SpeechSynthesisUtterance(userInput.value)
+        speechSynthesis.speak(utterance)
+      })
+    </script>
+  </body>
+</html>
